@@ -54,7 +54,7 @@ export default function VeniceAIChat() {
         Venice AI Agent
       </header>
 
-      <div className="flex flex-col mt-4 w-full max-w-2xl h-[500px] bg-gray-900/80 rounded-lg shadow-lg overflow-hidden">
+      <div className="flex flex-col mt-4 w-full max-w-2xl h-screen lg:h-[500px] bg-gray-900/80 rounded-lg shadow-lg overflow-hidden">
         <div className="flex-1 p-4 overflow-y-auto space-y-4">
           {messages.map((message, index) => (
             <div
@@ -75,7 +75,7 @@ export default function VeniceAIChat() {
           )}
         </div>
 
-        <div className="p-3 bg-black/70 border-t border-teal-500 flex items-center gap-2">
+        <div className="p-3  bg-black/70 border-t border-teal-500 flex items-center gap-2">
           <input
             type="text"
             value={input}
