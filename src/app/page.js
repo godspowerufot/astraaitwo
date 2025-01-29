@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function VeniceAIChat() {
   const [messages, setMessages] = useState([
@@ -51,8 +52,22 @@ export default function VeniceAIChat() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white flex flex-col items-center">
       <header className="w-full bg-black/70 p-4 text-center text-2xl font-bold uppercase tracking-widest border-b border-teal-500">
-        Venice AI Agent
+       Episenterai
       </header>
+      <div className='w-full justify-end  mt-4 mr-4'>
+        <ul className="flex gap-8  justify-end items-center "> {/* Add spacing between icons */}
+          <li>
+            <Link href="https://www.linkedin.com/in/john-dan-olofo-28882018b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" passHref>
+<img src="/linkedin.png" alt="in" className="text-white-500n w-auto h-[30.5px]"   />            </Link>
+          </li>
+          <li>
+            <Link href="https://x.com/olofojohn" passHref>
+<img src="/x.png" alt="twitter" srcset=""  className="text-white-500 w-auto h-[30.5px]"  />            </Link>
+          </li>
+       
+
+        </ul>
+      </div>
 
       <div className="flex flex-col mt-4 w-full max-w-2xl h-screen lg:h-[500px] bg-gray-900/80 rounded-lg shadow-lg overflow-hidden">
         <div className="flex-1 p-4 overflow-y-auto space-y-4">
