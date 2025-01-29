@@ -55,14 +55,14 @@ export default function VeniceAIChat() {
        Episenterai
       </header>
       <div className='w-full justify-end  mt-4 mr-4'>
-        <ul className="flex gap-8  justify-end items-center "> {/* Add spacing between icons */}
+        <ul className="flex gap-8  justify-center items-center "> {/* Add spacing between icons */}
           <li>
             <Link href="https://www.linkedin.com/in/john-dan-olofo-28882018b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" passHref>
-<img src="/linkedin.png" alt="in" className="text-white-500n w-auto h-[30.5px]"   />            </Link>
+<img src="/linkedin.png" alt="in" className="text-white-500n w-auto h-[20.5px]"   />            </Link>
           </li>
           <li>
             <Link href="https://x.com/olofojohn" passHref>
-<img src="/x.png" alt="twitter" srcset=""  className="text-white-500 w-auto h-[30.5px]"  />            </Link>
+<img src="/x.png" alt="twitter" srcset=""  className="text-white-500 w-auto h-[20.5px]"  />            </Link>
           </li>
        
 
