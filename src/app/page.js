@@ -94,10 +94,10 @@ export default function VeniceAIChat() {
   return (
     <div className="min-h-screen bg-[#170525] text-white flex flex-col items-center">
   <header className="w-full bg-[rgba(122, 23, 120, 0.1)] p-4 text-center text-2xl font-bold uppercase tracking-widest border-b border-[#990099]">
-    Timeless AI
+    Timeless GPT
   </header>
 
-  <div className="flex flex-col mt-4 w-full max-w-2xl h-screen lg:h-[500px] bg-[#7a17782f] rounded-lg shadow-lg overflow-hidden">
+  <div className=" relative flex flex-col mt-4 w-full max-w-2xl h-[90vh] lg:h-[500px] bg-[#7a17782f] rounded-lg shadow-lg overflow-hidden">
     <div className="flex-1 p-4 overflow-y-auto space-y-4">
       {messages.map((message, index) => (
         <div
@@ -112,14 +112,14 @@ export default function VeniceAIChat() {
         </div>
       ))}
     </div>
-
-    <div className="p-3 bg-[#7a177854] border-t border-[#990099] flex items-center justify-between">
-      <button
+    <button
         onClick={() => setIsImageMode(!isImageMode)}
-        className="bg-[#7a1778b2] hover:bg-[#7A1778] text-white px-4 py-2 rounded-lg"
+        className="bg-[#7a1778b2]  hover:bg-[#7A1778] text-white px-4 py-2 "
       >
         {isImageMode ? 'Switch to Chat' : 'Switch to Image Mode'}
       </button>
+    <div className="p-3 w-full  bg-[#7a177854] border-t border-[#990099] flex items-center justify-between">
+   
 
       <input
         type="text"
