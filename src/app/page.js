@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react';
-import Link from 'next/link';
 
 export default function VeniceAIChat() {
   const [messages, setMessages] = useState([
@@ -93,8 +92,8 @@ export default function VeniceAIChat() {
 
   return (
     <div className="min-h-screen bg-[#170525] text-white flex flex-col items-center">
-  <header className="w-full bg-[rgba(122, 23, 120, 0.1)] p-4 text-center text-2xl font-bold uppercase tracking-widest border-b border-[#990099]">
-    Timeless GPT
+  <header className="w-full flex justify-center items-center  bg-[rgba(122, 23, 120, 0.1)] p-4 text-center text-2xl font-bold uppercase tracking-widest border-b border-[#990099]">
+  <img src={"/Timeless-Logo.png"} alt="logo" width={500} height={500}/>
   </header>
 
   <div className=" relative flex flex-col mt-4 w-full max-w-2xl h-[90vh] lg:h-[500px] bg-[#7a17782f] rounded-lg shadow-lg overflow-hidden">
