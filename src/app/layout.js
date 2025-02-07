@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Episenterai",
-  description: "Episenterai",
+  title: "Timeless AI",
+  description: "Timeless Ai",
 };
 
 export default function RootLayout({ children }) {
