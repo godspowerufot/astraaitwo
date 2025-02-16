@@ -40,36 +40,38 @@ export default function VeniceAIChat() {
   };
 
   // Function to generate an image using OpenAI
-  const generateImage = async (prompt) => {
-    try {
-      setIsLoading(true);
-      const response = await fetch('https://api.openai.com/v1/images/generations', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${API_KEY}`,
-        },
-        body: JSON.stringify({
-          prompt,
-          n: 1,
-          size: '1024x1024',
-        }),
-      });
+// Function to generate an image using OpenAI
+const generateImage = async (prompt) => {
+  try {
+    setIsLoading(true);
+    const response = await fetch('https://api.openai.com/v1/images/generations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${API_KEY}`,
+      },
+      body: JSON.stringify({
+        prompt,
+        n: 1,
+        size: '1024x1024',
+      }),
+    });
 
-      const data = await response.json();
-      setIsLoading(false);
+    const data = await response.json();
+    setIsLoading(false);
 
-      if (data.data && data.data.length > 0) {
-        addMessage(`Generated Image: ${data.data[0].url}`, 'assistant');
-      } else {
-        addMessage('Failed to generate image.', 'assistant');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      addMessage('Error generating image.', 'assistant');
-      setIsLoading(false);
+    if (data.data && data.data.length > 0) {
+      addMessage(data.data[0].url, 'image'); // Store as an image message
+    } else {
+      addMessage('Failed to generate image.', 'assistant');
     }
-  };
+  } catch (error) {
+    console.error('Error:', error);
+    addMessage('Error generating image.', 'assistant');
+    setIsLoading(false);
+  }
+};
+
 
   // Handle sending message or generating image
   const handleSend = async () => {
@@ -102,12 +104,16 @@ export default function VeniceAIChat() {
         <div
           key={index}
           className={`w-fit max-w-[75%] p-3 rounded-lg text-sm shadow-md ${
-            message.role === 'assistant'
+            message.role === 'assistant' || message.role === 'image'
               ? 'bg-[#7a1778b2] border border-[#7A1778] self-start'
               : 'bg-[#7a1778b2] border border-[#990099] self-end'
           }`}
         >
-          {message.content}
+          {message.role === 'image' ? (
+        <img src={message.content} alt="Generated Image" className="rounded-lg w-full h-auto" />
+      ) : (
+        message.content
+      )}
         </div>
       ))}
     </div>
