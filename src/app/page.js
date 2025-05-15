@@ -22,7 +22,7 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
     try {
       const tokenRes = await fetch('https://tokens.jup.ag/tokens?tags=verified');
       const tokens = await tokenRes.json();
-      const first10 = tokens.slice(0, 10); // You can change to 50
+      const first10 = tokens.slice(0, 50); // You can change to 50
 
       const ids = first10.map((t) => t.address).join(',');
       const priceRes = await fetch(`https://lite-api.jup.ag/price/v2?ids=${ids}`);
