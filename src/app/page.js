@@ -44,6 +44,15 @@ export default function VeniceAIChat() {
       return 'Error: Unable to fetch response.';
     }
   };
+  const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = ghibliImageUrl;
+  link.download = 'ghibli-image.png';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   const generateImage = async (prompt) => {
     try {
@@ -199,11 +208,22 @@ ASTRA AI
             Upload File
           </button>
           {isLoading && <div className="animate-bounce text-white text-center">Generating Ghibli-style image...</div>}
-          {ghibliImageUrl && (
-            <div className="mt-4 text-center">
-              <img src={ghibliImageUrl} alt="Ghibli-style" className="rounded-lg w-full h-auto" />
-            </div>
-          )}
+        {ghibliImageUrl && (
+  <div className="mt-4 text-center space-y-4">
+    <img src={ghibliImageUrl} alt="Ghibli-style" className="rounded-lg w-full h-auto" />
+
+    <button
+  onClick={handleDownload}
+  className="inline-block bg-black text-white px-4 py-2 rounded-lg transition duration-300"
+>
+  Download Image
+</button>
+
+  </div>
+)}
+
+         
+
         </div>
       )}
     </div>
