@@ -33,4 +33,5 @@ body {
   animation-name: marquee;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  animation-duration: 10s; /* Slowed down the animation */
 }

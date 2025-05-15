@@ -176,28 +176,45 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
       <header className="w-full flex justify-center items-center bg-gray-900 p-4 text-2xl font-bold uppercase tracking-widest border-b border-gray-700">
         ASTRA AI
       </header>
-     <div className="w-full  bg-gray-800 py-2 mb-4 overflow-hidden border border-gray-700 rounded">
-          <div
-            className="flex items-center gap-8 animate-marquee whitespace-nowrap"
-            style={{ animationDuration: '20s' }}
-          >
-            {tokensWithPrices.length === 0 && <span>Loading tokens...</span>}
-            {tokensWithPrices.map((token, idx) => (
-              <div key={idx} className="flex items-center gap-9">
-                <img src={token.logoURI} alt={token.symbol} className="w-6 h-6 rounded-full" />
-                <span>{token.symbol} ({token.price})</span>
+      <div className="w-full bg-gray-800 py-2 mb-4 overflow-hidden border border-gray-700 rounded">
+        <div
+          className="flex font-sans items-center gap-8 animate-marquee whitespace-nowrap"
+          style={{ animationDuration: "60s" }}
+        >
+          {tokensWithPrices.length === 0 && <span>Loading tokens...</span>}
+          {tokensWithPrices.map((token, idx) => (
+            <div key={idx} className="flex gap-3 ml-4">
+              <img
+                src={token.logoURI}
+                alt={token.symbol}
+                className="w-6 h-6 rounded-full"
+              />
+              <div className="flex  gap-1">
+                <span>
+                  {token.symbol} (${parseFloat(token.price).toFixed(3)})
+                </span>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
       <div className="flex gap-2 my-4">
-        <button onClick={() => handleSwitch('chat')} className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded">
+        <button
+          onClick={() => handleSwitch("chat")}
+          className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
+        >
           Chat Mode
         </button>
-        <button onClick={() => handleSwitch('image')} className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded">
+        <button
+          onClick={() => handleSwitch("image")}
+          className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
+        >
           Image Mode
         </button>
-        <button onClick={() => handleSwitch('ghibli')} className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded">
+        <button
+          onClick={() => handleSwitch("ghibli")}
+          className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
+        >
           Ghibli Upload
         </button>
       </div>
@@ -209,28 +226,38 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
               <div
                 key={idx}
                 className={`w-fit max-w-[75%] p-3 rounded-lg text-sm shadow-md ${
-                  msg.role === 'assistant' || msg.role === 'image'
-                    ? 'bg-gray-800 border border-gray-700 self-start'
-                    : msg.role === 'system'
-                    ? 'bg-gray-700 border border-gray-500 text-sm italic self-center'
-                    : 'bg-gray-800 border border-gray-600 self-end'
+                  msg.role === "assistant" || msg.role === "image"
+                    ? "bg-gray-800 border border-gray-700 self-start"
+                    : msg.role === "system"
+                    ? "bg-gray-700 border border-gray-500 text-sm italic self-center"
+                    : "bg-gray-800 border border-gray-600 self-end"
                 }`}
               >
-                {msg.role === 'image' ? (
-                  <img src={msg.content} alt="Generated" className="rounded-lg w-full h-auto" />
+                {msg.role === "image" ? (
+                  <img
+                    src={msg.content}
+                    alt="Generated"
+                    className="rounded-lg w-full h-auto"
+                  />
                 ) : (
                   msg.content
                 )}
               </div>
             ))}
-            {isLoading && <div className="animate-bounce text-white text-center mt-2">Loading...</div>}
+            {isLoading && (
+              <div className="animate-bounce text-white text-center mt-2">
+                Loading...
+              </div>
+            )}
           </div>
           <div className="p-3 w-full bg-gray-800 border-t border-gray-700 flex items-center justify-between">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={isImageMode ? 'Enter image prompt...' : 'Type your message...'}
+              placeholder={
+                isImageMode ? "Enter image prompt..." : "Type your message..."
+              }
               className="flex-1 p-2 bg-black text-white rounded-lg outline-none placeholder-gray-400 mx-2"
             />
             <button
@@ -243,15 +270,28 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
         </div>
       ) : (
         <div className="w-full max-w-xl bg-gray-900 rounded-lg p-6">
-          <h2 className="text-xl mb-4 font-semibold">Upload Image for Ghibli Style</h2>
+          <h2 className="text-xl mb-4 font-semibold">
+            Upload Image for Ghibli Style
+          </h2>
           <input type="file" onChange={handleFileChange} className="mb-2" />
-          <button onClick={generateGhibliImage} className="block w-full bg-gray-200 text-black p-2 mb-4 hover:bg-gray-300">
+          <button
+            onClick={generateGhibliImage}
+            className="block w-full bg-gray-200 text-black p-2 mb-4 hover:bg-gray-300"
+          >
             Upload File
           </button>
-          {isLoading && <div className="animate-bounce text-white text-center">Generating Ghibli-style image...</div>}
+          {isLoading && (
+            <div className="animate-bounce text-white text-center">
+              Generating Ghibli-style image...
+            </div>
+          )}
           {ghibliImageUrl && (
             <div className="mt-4 text-center space-y-4">
-              <img src={ghibliImageUrl} alt="Ghibli-style" className="rounded-lg w-full h-auto" />
+              <img
+                src={ghibliImageUrl}
+                alt="Ghibli-style"
+                className="rounded-lg w-full h-auto"
+              />
               <button
                 onClick={handleDownload}
                 className="inline-block bg-black text-white px-4 py-2 rounded-lg transition duration-300"
