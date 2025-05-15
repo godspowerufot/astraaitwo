@@ -19,3 +19,18 @@ body {
   background-color: rgba(122, 23, 120, 0.1);
   font-family: 'Orbitron',Arial, Helvetica, sans-serif;
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
