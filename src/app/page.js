@@ -142,7 +142,7 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
       setIsLoading(true);
       const botReply = await getResponse(input);
       addMessage(botReply, 'assistant');
-      setIsLoading(false);
+      setIsLoading(false);  
     }
   };
 
@@ -199,24 +199,26 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
         </div>
       </div>
       <div className="flex gap-2 my-4">
+           <button
+          onClick={() => handleSwitch("ghibli")}
+          className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
+        >
+          Ghibli Upload
+        </button>
+            <button
+          onClick={() => handleSwitch("image")}
+          className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
+        >
+          Image Mode
+        </button>1
         <button
           onClick={() => handleSwitch("chat")}
           className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
         >
           Chat Mode
         </button>
-        <button
-          onClick={() => handleSwitch("image")}
-          className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
-        >
-          Image Mode
-        </button>
-        <button
-          onClick={() => handleSwitch("ghibli")}
-          className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
-        >
-          Ghibli Upload
-        </button>
+    
+     
       </div>
 
       {!isGhibliMode ? (
