@@ -174,7 +174,7 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center">
       <header className="w-full flex justify-center items-center bg-gray-900 p-4 text-2xl font-bold uppercase tracking-widest border-b border-gray-700">
-        ASTRAEUSAI
+        ASTRAEUS AI
       </header>
       <div className="w-full bg-gray-800 py-2 mb-4 overflow-hidden border border-gray-700 rounded">
         <div
@@ -203,19 +203,18 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
           onClick={() => handleSwitch("ghibli")}
           className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
         >
-          Ghibli Upload
-        </button>
+Craft nft avaters        </button>
             <button
           onClick={() => handleSwitch("image")}
           className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
         >
-          Image Mode
-        </button>1
+          Image generate
+        </button>
         <button
           onClick={() => handleSwitch("chat")}
           className="bg-gray-200 hover:bg-gray-300 text-black px-4 py-2 rounded"
         >
-          Chat Mode
+        Web3 chat
         </button>
     
      
