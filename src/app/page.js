@@ -174,12 +174,12 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center">
       <header className="w-full flex justify-center items-center bg-gray-900 p-4 text-2xl font-bold uppercase tracking-widest border-b border-gray-700">
-        ASTRA AI
+        ASTRAEUSAI
       </header>
       <div className="w-full bg-gray-800 py-2 mb-4 overflow-hidden border border-gray-700 rounded">
         <div
           className="flex font-sans items-center gap-8 animate-marquee whitespace-nowrap"
-          style={{ animationDuration: "60s" }}
+          style={{ animationDuration: "100s" }}
         >
           {tokensWithPrices.length === 0 && <span>Loading tokens...</span>}
           {tokensWithPrices.map((token, idx) => (
@@ -284,7 +284,7 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
           </button>
           {isLoading && (
             <div className="animate-bounce text-white text-center">
-              Generating Ghibli-style image...
+              Generating Ghibli-style image in 40 sec...
             </div>
           )}
           {ghibliImageUrl && (
@@ -294,12 +294,7 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
                 alt="Ghibli-style"
                 className="rounded-lg w-full h-auto"
               />
-              <button
-                onClick={handleDownload}
-                className="inline-block bg-black text-white px-4 py-2 rounded-lg transition duration-300"
-              >
-                Download Image
-              </button>
+             
             </div>
           )}
         </div>
