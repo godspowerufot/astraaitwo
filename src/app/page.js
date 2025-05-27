@@ -177,13 +177,12 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
     <img src="/hedge.png" alt='hedge' className='w-20 h-20'/> HEDGE
       </header>
       <div className="w-full bg-gray-800 py-2 mb-4 overflow-hidden border border-gray-700 rounded">
-        <div
+        {/* <div
           className="flex font-sans items-center gap-8 animate-marquee whitespace-nowrap"
           style={{ animationDuration: "100s" }}
         >
 
-    <img src="/Heddge.png" alt='hedge' className='w-20 h-20'/> 
-          {/* {tokensWithPrices.length === 0 && <span>Loading tokens...</span>}
+          {tokensWithPrices.length === 0 && <span>Loading tokens...</span>}
           {tokensWithPrices.map((token, idx) => (
             <div key={idx} className="flex gap-3 ml-4">
               <img
@@ -197,8 +196,8 @@ const [tokensWithPrices, setTokensWithPrices] = useState([]);
                 </span>
               </div>
             </div>
-          ))} */}
-        </div>
+          ))}
+        </div> */}
       </div>
       <div className="flex gap-2 my-4">
            <button
@@ -302,13 +301,9 @@ Craft nft avaters        </button>
       )}
 
 
-
-
-
-      <div>
-          <img src="/x.png" alt='hedge' className='w-10 h-10'/> 
-
-      </div>
+      <footer className="w-full bg-gray-900 p-4 text-center text-sm text-gray-500 mt-4">
+        <ing src="/x.png" alt='hedge' className='w-5 h-5 inline-block'/>
+      </footer>
     </div>
   );
 }
